@@ -15,5 +15,5 @@ https://nodejs.org/en/download/
 ## Getting started
 ```bash
 
-npm run start-dev
+npm start
 ```
