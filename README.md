@@ -22,7 +22,7 @@ Execute the following to run the app on your local machine from your terminal if
 npm start
 ```
 
-## Once you run `npm start`, you should see the following output to the terminal and then Node.js returns.
+Once you run `npm start`, you should see the following output to the terminal and then Node.js returns.
 
 ```bash
 UNIT TESTING
