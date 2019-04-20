@@ -1,0 +1,11 @@
+{
+  "name": "ngrams",
+  "version": "1.0.0",
+  "description": "coding challenge",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Theerut Foongkiatcharoen",
+  "license": "ISC"
+}
