@@ -1,13 +1,13 @@
-const { addSection, newLine } = require('./utils/utils');
+const { addSection, newLine } = require("./utils/utils");
 
 function nGrams(sentence) {
-    // If the input is undefined
-    if(!sentence) return [];
-    let res = [];
-    // Strip punctuation
-    sentence = sentence.replace(/[~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, "");
+	// If the input is undefined
+	if (!sentence) return [];
+	let res = [];
+	// Strip punctuation
+	sentence = sentence.replace(/[~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, "");
 	// Split sentence up into words
-    let words = sentence.split(/\W+/);
+	let words = sentence.split(/\W+/);
 	// Get number of words in the string
 	let numOfWords = words.length - 1;
 	// If the input has only one word
@@ -29,20 +29,20 @@ function nGrams(sentence) {
 }
 
 function unitTesting() {
-	console.log('UNIT TESTING\n');
+	console.log("UNIT TESTING\n");
 	addSection();
 	console.log(`EMPTY STRING: '' \n`);
-	console.log(nGrams(''));
+	console.log(nGrams(""));
 	newLine();
 	addSection();
 	console.log(`ONE WORD: 'test.'\n`);
-	console.log(nGrams('test.'));
+	console.log(nGrams("test."));
 	newLine();
 	console.log(`ONE WORD WITH PUNCTUATION: 't@est.#{}' \n`);
 	addSection();
-	console.log(nGrams('t@est.#{}'));
+	console.log(nGrams("t@est.#{}"));
 	newLine();
-	console.log('Test cases for even and odd words including punctuation\n');
+	console.log("Test cases for even and odd words including punctuation\n");
 	addSection();
 	console.log(`'Show me the code.' \n`);
 	console.log(nGrams("Show me the code."));
