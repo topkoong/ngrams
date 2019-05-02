@@ -19,10 +19,7 @@ module.exports = {
 		sentence = sentence.replace(/[~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, '');
 		let words = sentence.split(/\W+/);
 		let numOfWords = words.length - 1;
-		if (words.length === 1) {
-			res.push(words[numOfWords]);
-			return res;
-		}
+		if (words.length === 1) return [words[numOfWords]];
 		words.forEach((word, i) => {
 			let seq = "";
 			for (let j = i; j <= numOfWords; j++) {
