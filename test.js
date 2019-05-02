@@ -13,7 +13,7 @@ function unitTesting() {
 			});
         });
         describe(`ONE WORD WITH PUNCTUATION: 't@est.#{}'`, () => {
-			it(`should return []`, function() {
+			it(`should return []`, () => {
                 expect(['test']).to.deep.equal(nGrams('t@est.#{}'));
 			});
         });
@@ -27,7 +27,7 @@ function unitTesting() {
             'me the code ',
             'the ',
             'the code ',
-            'code ' ]`, function() {
+            'code ' ]`, () => {
                 expect([ 'Show ',
                 'Show me ',
                 'Show me the ',
