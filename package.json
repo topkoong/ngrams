@@ -1,11 +1,17 @@
 {
   "name": "ngrams",
   "version": "1.0.0",
-  "description": "coding challenge",
+  "description": "Coding challenge including Unit Testing",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "mocha",
+    "test": "mocha"
   },
   "author": "Theerut Foongkiatcharoen",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "dependencies": {}
 }

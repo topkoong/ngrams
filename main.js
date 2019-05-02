@@ -1,59 +1,36 @@
-const { addSection, newLine } = require("./utils/utils");
 
-function nGrams(sentence) {
-	// If the input is undefined
-	if (!sentence) return [];
-	let res = [];
-	// Strip punctuation
-	sentence = sentence.replace(/[~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, "");
-	// Split sentence up into words
-	let words = sentence.split(/\W+/);
-	// Get number of words in the string
-	let numOfWords = words.length - 1;
-	// If the input has only one word
-	if (words.length === 1) {
-		res.push(words[numOfWords]);
+/*
+nGrams logic
+	Check if the input is undefined
+	Strip punctuation
+	Split sentence up into words
+	Get number of words in the string
+	Check if the input has only one word
+	Loop through and create all sequences
+		- Concatenate a word
+		- Add a word to a result array
+	Return a result array
+*/
+
+module.exports = {
+	nGrams: (sentence) => {
+		if (!sentence) return [];
+		let res = [];
+		sentence = sentence.replace(/[~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, '');
+		let words = sentence.split(/\W+/);
+		let numOfWords = words.length - 1;
+		if (words.length === 1) {
+			res.push(words[numOfWords]);
+			return res;
+		}
+		words.forEach((word, i) => {
+			let seq = "";
+			for (let j = i; j <= numOfWords; j++) {
+				seq = seq.concat(`${words[j]} `);
+				res.push(seq);
+			}
+		});
 		return res;
 	}
-	// Loop through and create all sequences
-	for (let i = 0; i <= numOfWords; i++) {
-		let seq = "";
-		for (let j = i; j <= numOfWords; j++) {
-			// Concatenate a word
-			seq += words[j] + " ";
-			// Add a word to a result array
-			res.push(seq);
-		}
-	}
-	return res;
 }
 
-function unitTesting() {
-	console.log("UNIT TESTING\n");
-	addSection();
-	console.log(`EMPTY STRING: '' \n`);
-	console.log(nGrams(""));
-	newLine();
-	addSection();
-	console.log(`ONE WORD: 'test.'\n`);
-	console.log(nGrams("test."));
-	newLine();
-	console.log(`ONE WORD WITH PUNCTUATION: 't@est.#{}' \n`);
-	addSection();
-	console.log(nGrams("t@est.#{}"));
-	newLine();
-	console.log("Test cases for even and odd words including punctuation\n");
-	addSection();
-	console.log(`'Show me the code.' \n`);
-	console.log(nGrams("Show me the code."));
-	newLine();
-	addSection();
-	console.log(`'I love JavaScript.' \n`);
-	console.log(nGrams("I love JavaScript."));
-	newLine();
-	addSection();
-	console.log(`'Which coffee is the healthiest?' \n`);
-	console.log(nGrams("Which coffee is the healthiest?"));
-}
-
-unitTesting();
