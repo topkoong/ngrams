@@ -4,12 +4,12 @@ function unitTesting() {
 	describe("Ngrams Unit testing", () => {
 		describe(`EMPTY STRING: ''`, () => {
 			it(`should return []`, () => {
-                expect([]).to.deep.equal(nGrams(''));
+                expect([]).to.deep.equal(nGrams(""));
 			});
         });
         describe(`ONE WORD: 'test.'`, () => {
 			it(`should return ['test']`, () => {
-                expect(['test']).to.deep.equal(nGrams(`test.`));
+                expect(['test']).to.deep.equal(nGrams('test.'));
 			});
         });
         describe(`ONE WORD WITH PUNCTUATION: 't@est.#{}'`, () => {
